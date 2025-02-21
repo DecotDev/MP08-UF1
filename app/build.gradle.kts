@@ -29,6 +29,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -40,4 +43,24 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    implementation(libs.appcompat)
+    implementation(libs.material)
+    implementation(libs.activity)
+    implementation(libs.constraintlayout)
+    //implementation(libs.navigation.fragment)
+
+    //implementation(libs.navigation.ui)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.ext.junit)
+    androidTestImplementation(libs.espresso.core)
+    //implementation(libs.material.v120)
+
+    //implementation (libs.navigation.fragment.v230)
+    //implementation (libs.navigation.ui.v230)
+    //implementation (libs.viewpager2)
+    //implementation (libs.material.v130alpha03)
+    testImplementation (libs.junit)
+    androidTestImplementation (libs.junit.v115)
+    androidTestImplementation (libs.espresso.core.v351)
+
 }
