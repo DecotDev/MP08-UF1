@@ -8,7 +8,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.finalprojectuf1.databinding.ActivityMainBinding;
+import com.example.mp08_uf1.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity  {
 
