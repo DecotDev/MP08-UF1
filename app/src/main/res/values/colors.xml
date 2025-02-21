@@ -11,5 +11,7 @@
     <color name="advanced">#FF7700</color>
     <color name="pro">#FF1C00</color>
     <color name="demon">#AE00FF</color>
+    <color name="slight_grey">#999999</color>
+    <color name="slighter_grey">#DBDBDB</color>
 
 </resources>
