@@ -40,7 +40,6 @@ public class Move {
     public boolean isLearned() {
         return learned;
     }
-
     public void setLearned(boolean learned) {
         this.learned = learned;
     }

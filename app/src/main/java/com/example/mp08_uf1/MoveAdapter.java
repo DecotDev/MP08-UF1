@@ -36,9 +36,32 @@ public class MoveAdapter extends RecyclerView.Adapter<MoveAdapter.MoveViewHolder
     public void onBindViewHolder(@NonNull MoveViewHolder holder, int position) {
         Move move = moveList.get(position);
         holder.name.setText(move.getName());
-        holder.description.setText(move.getDescription());
+        //holder.description.setText(move.getDescription());
         holder.image.setImageResource(move.getImageResId());
         holder.learned.setChecked(move.isLearned());
+
+        int difficulty = move.getDifficulty();
+        if (move.getDifficulty() <=1 ) {
+            holder.difficulty.setText(R.string.super_easy);
+            holder.difficulty.setTextAppearance(R.style.SuperEasy);
+        } else if (move.getDifficulty() <= 3) {
+            holder.difficulty.setText(R.string.easy);
+            holder.difficulty.setTextAppearance(R.style.EasyStyle);
+        } else if (move.getDifficulty() <= 5) {
+            holder.difficulty.setText(R.string.intermediate);
+            holder.difficulty.setTextAppearance(R.style.Intermediate);
+        } else if (move.getDifficulty() <= 7) {
+            holder.difficulty.setText(R.string.advanced);
+            holder.difficulty.setTextAppearance(R.style.Advanced);
+        } else if (move.getDifficulty() <= 9) {
+            holder.difficulty.setText(R.string.parkour_professional);
+            holder.difficulty.setTextAppearance(R.style.Pro);
+        }
+        else if (move.getDifficulty() == 10) {
+            holder.difficulty.setText(R.string.urban_demon);
+            holder.difficulty.setTextAppearance(R.style.Demon);
+        }
+        holder.category.setText(move.getCategory());
 
         holder.itemView.setOnClickListener(v -> listener.onMoveClick(move));
     }
@@ -49,16 +72,21 @@ public class MoveAdapter extends RecyclerView.Adapter<MoveAdapter.MoveViewHolder
     }
 
     static class MoveViewHolder extends RecyclerView.ViewHolder {
-        TextView name, description;
+        TextView name;
+        //TextView description;
         ImageView image;
         CheckBox learned;
+        TextView difficulty;
+        TextView category;
 
         public MoveViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.move_name);
-            description = itemView.findViewById(R.id.move_description);
+            //description = itemView.findViewById(R.id.move_description);
             image = itemView.findViewById(R.id.move_image);
             learned = itemView.findViewById(R.id.move_learned);
+            difficulty = itemView.findViewById(R.id.move_difficulty);
+            category = itemView.findViewById(R.id.move_category);
         }
     }
 }

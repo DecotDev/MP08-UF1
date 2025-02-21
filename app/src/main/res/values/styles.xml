@@ -8,4 +8,35 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="SuperEasy">
+        <item name="android:textColor">@color/super_easy</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="EasyStyle">
+        <item name="android:textColor">@color/easy</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="Intermediate">
+        <item name="android:textColor">@color/intermediate</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="Advanced">
+        <item name="android:textColor">@color/advanced</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="Pro">
+        <item name="android:textColor">@color/pro</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="Demon">
+        <item name="android:textColor">@color/demon</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
 </resources>

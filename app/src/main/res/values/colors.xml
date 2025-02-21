@@ -5,4 +5,11 @@
     <color name="colorPrimary">#1ac227</color>
     <color name="colorPrimaryDark">#00850a</color>
     <color name="colorAccent">#52a531</color>
+    <color name="super_easy">#00FFB9</color>
+    <color name="easy">#0CCE1D</color>
+    <color name="intermediate">#E6FF06</color>
+    <color name="advanced">#FF7700</color>
+    <color name="pro">#FF1C00</color>
+    <color name="demon">#AE00FF</color>
+
 </resources>

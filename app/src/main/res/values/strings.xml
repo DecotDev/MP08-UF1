@@ -7,4 +7,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="spots">Spots</string>
     <string name="moves">Moves</string>
+    <string name="easy">Easy</string>
+    <string name="super_easy">You already can, but haven\'t tried</string>
+    <string name="intermediate">Intermediate</string>
+    <string name="advanced">Advanced</string>
+    <string name="parkour_professional">Parkour professional</string>
+    <string name="urban_demon">Urban Demon</string>
 </resources>

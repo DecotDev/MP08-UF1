@@ -30,11 +30,16 @@ public class MoveDetailFragment extends Fragment {
         TextView name = view.findViewById(R.id.detail_move_name);
         TextView description = view.findViewById(R.id.detail_move_description);
         ImageView image = view.findViewById(R.id.detail_move_image);
+        TextView difficulty = view.findViewById(R.id.detail_move_difficulty);
+        TextView category = view.findViewById(R.id.move_category);
+
 
         moveViewModel.getSelectedMove().observe(getViewLifecycleOwner(), move -> {
             name.setText(move.getName());
             description.setText(move.getDescription());
             image.setImageResource(move.getImageResId());
+            difficulty.setText("Diffculty: " + String.valueOf(move.getDifficulty()));
+            category.setText(move.getCategory());
         });
     }
 }
