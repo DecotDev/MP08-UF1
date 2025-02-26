@@ -1,10 +1,13 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin") version "2.0.1"
+
 }
 
 android {
     namespace = "com.example.mp08_uf1"
     compileSdk = 35
+
 
     defaultConfig {
         applicationId = "com.example.mp08_uf1"
@@ -32,9 +35,11 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
 }
 
 dependencies {
+
 
     implementation(libs.appcompat)
     implementation(libs.material)
@@ -43,6 +48,8 @@ dependencies {
     implementation(libs.navigation.runtime)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
+    implementation(libs.play.services.maps)
+    implementation(libs.preference)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
@@ -56,6 +63,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    implementation(libs.osmdroid.android)
+    implementation("org.osmdroid:osmdroid-android:6.1.16")
+
+
     //implementation(libs.material.v120)
 
     //implementation (libs.navigation.fragment.v230)

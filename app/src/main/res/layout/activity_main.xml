@@ -30,9 +30,10 @@
         app:menu="@menu/bottom_nav_menu"/>
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:id="@+id/toolbar"
+        app:title=" "
+        android:layout_width="match_parent"
         android:background="?attr/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,8 +41,12 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         android:backgroundTint="@color/colorPrimary"
         android:textAlignment="center"
-        app:titleTextColor="@color/black"/>
 
+        app:titleTextColor="@color/black"/>
+<!--
+        android:layout_height="60dp"
+
+-->
     <androidx.fragment.app.FragmentContainerView
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:id="@+id/nav_host_fragment"
@@ -58,7 +63,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
+        app:menu="@menu/bottom_nav_menu"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

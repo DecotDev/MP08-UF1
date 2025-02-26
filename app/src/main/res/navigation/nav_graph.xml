@@ -8,19 +8,18 @@
     <fragment
         android:id="@+id/spotsFragment"
         android:name="com.example.mp08_uf1.SpotsFragment"
-        android:label="fragment_spots"
         tools:layout="@layout/fragment_spots" />
 
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.mp08_uf1.SettingsFragment"
-        android:label="fragment_settings"
+
         tools:layout="@layout/fragment_settings" />
 
     <fragment
         android:id="@+id/movesFragment"
         android:name="com.example.mp08_uf1.MovesFragment"
-        android:label="Moves"
+
         tools:layout="@layout/fragment_moves">
         <action
             android:id="@+id/action_movesFragment_to_moveDetailFragment"
@@ -30,7 +29,6 @@
     <fragment
         android:id="@+id/moveDetailFragment"
         android:name="com.example.mp08_uf1.MoveDetailFragment"
-        android:label="Move Details"
         tools:layout="@layout/fragment_move_detail" />
 
 </navigation>

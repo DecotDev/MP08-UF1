@@ -14,4 +14,13 @@
     <string name="parkour_professional">Parkour professional</string>
     <string name="urban_demon">Urban Demon</string>
     <string name="skill_acquired">Skill acquired</string>
+    <string-array name="difficulty_levels">
+        <item>Any</item>
+        <item>Super Easy</item>
+        <item>Easy</item>
+        <item>Intermediate</item>
+        <item>Advanced</item>
+        <item>Professional</item>
+        <item>Urban Demon</item>
+    </string-array>
 </resources>
