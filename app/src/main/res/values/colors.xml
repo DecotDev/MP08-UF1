@@ -12,6 +12,8 @@
     <color name="pro">#FF1C00</color>
     <color name="demon">#AE00FF</color>
     <color name="slight_grey">#999999</color>
+    <color name="grey">#5F5F5F</color>
     <color name="slighter_grey">#DBDBDB</color>
+    <color name="dark_gray">#282828</color>
 
 </resources>

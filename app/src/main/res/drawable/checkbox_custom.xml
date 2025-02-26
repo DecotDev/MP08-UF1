@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Checked State -->
+    <item android:state_checked="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/black"/> <!-- Inside Color when Checked -->
+            <stroke android:width="2dp" android:color="@color/super_easy"/> <!-- Border Color -->
+            <corners android:radius="5dp"/>
+        </shape>
+    </item>
+
+    <!-- Unchecked State -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white"/> <!-- Inside Color when Unchecked -->
+            <stroke android:width="2dp" android:color="@color/advanced"/> <!-- Border Color -->
+            <corners android:radius="5dp"/>
+        </shape>
+    </item>
+
+</selector>
