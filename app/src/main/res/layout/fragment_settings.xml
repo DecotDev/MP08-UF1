@@ -4,8 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_marginTop="68dp"
-    android:layout_height="match_parent" >
+    android:layout_marginTop="62dp"
+    android:layout_height="match_parent"
+    android:background="@color/dark_gray">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -23,25 +24,34 @@
             android:id="@+id/switch_learned_moves"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Show Learned Moves"/>
+            android:text="Show Learned Moves"
+            android:textColor="@color/white"
+            android:layout_marginTop="8dp"/>
 
         <Switch
+            android:layout_marginTop="16dp"
             android:textSize="16sp"
             android:id="@+id/switch_moves_to_learn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Show Moves to Learn"/>
+            android:text="Show Moves to Learn"
+            android:textColor="@color/white"/>
 
         <TextView
+            android:layout_marginTop="12dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Default Difficulty Filter"
+            android:textColor="@color/white"
             android:paddingTop="10dp"/>
 
         <Spinner
+            android:layout_marginTop="8dp"
             android:id="@+id/spinner_difficulty"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            />
 
 
 
