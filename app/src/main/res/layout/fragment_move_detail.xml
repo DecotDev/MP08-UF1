@@ -120,7 +120,7 @@
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="46dp"
-        android:text="Ver Video"
+        android:text="Watch Video"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />

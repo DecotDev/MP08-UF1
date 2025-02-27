@@ -1,9 +1,12 @@
 package com.example.mp08_uf1;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,6 +35,15 @@ public class MoveDetailFragment extends Fragment {
         ImageView image = view.findViewById(R.id.detail_move_image);
         TextView difficulty = view.findViewById(R.id.detail_move_difficulty);
         TextView category = view.findViewById(R.id.move_category);
+
+        Button videoButton = view.findViewById(R.id.move_video_button);
+        videoButton.setOnClickListener(v -> {
+            Move selectedMove = moveViewModel.getSelectedMove().getValue();
+            if (selectedMove != null) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(selectedMove.getVideoUrl()));
+                startActivity(intent);
+            }
+        });
 
 
         moveViewModel.getSelectedMove().observe(getViewLifecycleOwner(), move -> {
