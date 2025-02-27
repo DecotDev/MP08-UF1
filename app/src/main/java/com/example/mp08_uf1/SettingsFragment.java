@@ -18,7 +18,7 @@ import androidx.preference.PreferenceManager;
 
 public class SettingsFragment extends Fragment {
 
-    private Switch switchDarkMode;
+    private Switch switchMovesToLearn;
     private Switch switchShowLearned;
     private Spinner spinnerDifficulty;
     private Button buttonResetProgress;
@@ -30,8 +30,8 @@ public class SettingsFragment extends Fragment {
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext());
 
-        switchDarkMode = view.findViewById(R.id.switch_dark_mode);
-        switchShowLearned = view.findViewById(R.id.switch_show_learned);
+        switchMovesToLearn = view.findViewById(R.id.switch_moves_to_learn);
+        switchShowLearned = view.findViewById(R.id.switch_learned_moves);
         spinnerDifficulty = view.findViewById(R.id.spinner_difficulty);
         buttonResetProgress = view.findViewById(R.id.button_reset_progress);
 
@@ -42,12 +42,12 @@ public class SettingsFragment extends Fragment {
         spinnerDifficulty.setAdapter(adapter);
 
         // Load saved settings
-        switchDarkMode.setChecked(sharedPreferences.getBoolean("dark_mode", false));
+        switchMovesToLearn.setChecked(sharedPreferences.getBoolean("dark_mode", false));
         switchShowLearned.setChecked(sharedPreferences.getBoolean("show_learned", false));
         spinnerDifficulty.setSelection(sharedPreferences.getInt("difficulty_filter", 0));
 
         // Save changes when toggled
-        switchDarkMode.setOnCheckedChangeListener((buttonView, isChecked) ->
+        switchMovesToLearn.setOnCheckedChangeListener((buttonView, isChecked) ->
                 sharedPreferences.edit().putBoolean("dark_mode", isChecked).apply());
 
         switchShowLearned.setOnCheckedChangeListener((buttonView, isChecked) ->

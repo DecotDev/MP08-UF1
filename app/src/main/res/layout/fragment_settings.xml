@@ -19,31 +19,30 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Switch
-            android:id="@+id/switch_dark_mode"
+            android:textSize="16sp"
+            android:id="@+id/switch_learned_moves"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enable Dark Mode"
-            android:textSize="16sp" />
+            android:text="Show Learned Moves"/>
 
         <Switch
-            android:id="@+id/switch_show_learned"
+            android:textSize="16sp"
+            android:id="@+id/switch_moves_to_learn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Show Only Learned Moves"
-            android:textSize="16sp" />
+            android:text="Show Moves to Learn"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
             android:text="Default Difficulty Filter"
-            android:textSize="16sp" />
+            android:paddingTop="10dp"/>
 
         <Spinner
             android:id="@+id/spinner_difficulty"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="16sp" />
+            android:layout_height="wrap_content"/>
+
 
 
     </LinearLayout>
