@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -46,12 +47,25 @@ public class MoveDetailFragment extends Fragment {
         });
 
 
+        CheckBox learnedCheckBox = view.findViewById(R.id.move_learned);
+
         moveViewModel.getSelectedMove().observe(getViewLifecycleOwner(), move -> {
-            name.setText(move.getName());
-            description.setText(move.getDescription());
-            image.setImageResource(move.getImageResId());
-            difficulty.setText("Diffculty: " + String.valueOf(move.getDifficulty()));
-            category.setText(move.getCategory());
+            if (move != null) {
+                name.setText(move.getName());
+                description.setText(move.getDescription());
+                image.setImageResource(move.getImageResId());
+                difficulty.setText("Difficulty: " + move.getDifficulty());
+                category.setText(move.getCategory());
+                learnedCheckBox.setChecked(move.isLearned());
+            }
+        });
+
+        learnedCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            Move selectedMove = moveViewModel.getSelectedMove().getValue();
+            if (selectedMove != null) {
+                selectedMove.setLearned(isChecked);
+                moveViewModel.updateMove(selectedMove); // Update ViewModel
+            }
         });
     }
 }
