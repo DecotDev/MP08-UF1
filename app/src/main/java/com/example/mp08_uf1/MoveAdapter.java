@@ -42,23 +42,28 @@ public class MoveAdapter extends RecyclerView.Adapter<MoveAdapter.MoveViewHolder
     @Override
     public void onBindViewHolder(@NonNull MoveViewHolder holder, int position) {
         Move move = moveList.get(position);
+
         holder.name.setText(move.getName());
         holder.image.setImageResource(move.getImageResId());
+
+        // Remove previous listener to prevent unexpected behavior
+        holder.learned.setOnCheckedChangeListener(null);
+
+        // Set correct state for checkbox
         holder.learned.setChecked(move.isLearned());
 
-        // Get background color based on difficulty
+        // Set background color based on learned state
         int difficultyColor = getDifficultyColor(holder.itemView.getContext(), move.getDifficulty());
-
-        // Apply gradient if learned, otherwise use slight_gray
         if (move.isLearned()) {
             holder.itemContainer.setBackground(getGradientDrawable(holder.itemView.getContext(), difficultyColor));
         } else {
             holder.itemContainer.setBackgroundResource(R.drawable.round_slight_grey);
         }
 
+        // Now, set the new listener
         holder.learned.setOnCheckedChangeListener((buttonView, isChecked) -> {
             move.setLearned(isChecked);
-            moveViewModel.updateMove(move); // Update the ViewModel state
+            moveViewModel.updateMove(move);
 
             if (isChecked) {
                 holder.itemContainer.setBackground(getGradientDrawable(holder.itemView.getContext(), difficultyColor));
@@ -66,6 +71,8 @@ public class MoveAdapter extends RecyclerView.Adapter<MoveAdapter.MoveViewHolder
                 holder.itemContainer.setBackgroundResource(R.drawable.round_slight_grey);
             }
         });
+        holder.itemView.setOnClickListener(v -> listener.onMoveClick(move));
+
 
 
 

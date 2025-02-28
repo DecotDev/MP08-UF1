@@ -38,15 +38,24 @@ public class MoveViewModel extends ViewModel {
     public void updateMove(Move updatedMove) {
         List<Move> currentMoves = moveListLiveData.getValue();
         if (currentMoves != null) {
-            for (Move move : currentMoves) {
-                if (move.getName().equals(updatedMove.getName())) { // Find the matching move
-                    move.setLearned(updatedMove.isLearned());
+            for (int i = 0; i < currentMoves.size(); i++) {
+                if (currentMoves.get(i).getName().equals(updatedMove.getName())) {
+                    currentMoves.set(i, new Move(
+                            updatedMove.getName(),
+                            updatedMove.getDescription(),
+                            updatedMove.getImageResId(),
+                            updatedMove.getDifficulty(),
+                            updatedMove.getCategory(),
+                            updatedMove.getVideoUrl(),
+                            updatedMove.isLearned()
+                    ));
                     break;
                 }
             }
-            moveListLiveData.setValue(currentMoves); // Notify observers
+            moveListLiveData.setValue(new ArrayList<>(currentMoves)); // Ensure LiveData updates
         }
     }
+
 
 
     public LiveData<List<Move>> getMoveList() {
