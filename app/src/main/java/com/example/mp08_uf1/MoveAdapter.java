@@ -20,13 +20,15 @@ import java.util.List;
 public class MoveAdapter extends RecyclerView.Adapter<MoveAdapter.MoveViewHolder> {
     private List<Move> moveList;
     private OnMoveClickListener listener;
+    private MoveViewModel moveViewModel;
 
     public interface OnMoveClickListener {
         void onMoveClick(Move move);
     }
 
-    public MoveAdapter(List<Move> moveList, OnMoveClickListener listener) {
+    public MoveAdapter(List<Move> moveList, MoveViewModel moveViewModel, OnMoveClickListener listener) {
         this.moveList = moveList;
+        this.moveViewModel = moveViewModel; // Assign ViewModel
         this.listener = listener;
     }
 
@@ -56,6 +58,7 @@ public class MoveAdapter extends RecyclerView.Adapter<MoveAdapter.MoveViewHolder
 
         holder.learned.setOnCheckedChangeListener((buttonView, isChecked) -> {
             move.setLearned(isChecked);
+            moveViewModel.updateMove(move); // Update the ViewModel state
 
             if (isChecked) {
                 holder.itemContainer.setBackground(getGradientDrawable(holder.itemView.getContext(), difficultyColor));
@@ -63,6 +66,7 @@ public class MoveAdapter extends RecyclerView.Adapter<MoveAdapter.MoveViewHolder
                 holder.itemContainer.setBackgroundResource(R.drawable.round_slight_grey);
             }
         });
+
 
 
         int difficulty = move.getDifficulty();

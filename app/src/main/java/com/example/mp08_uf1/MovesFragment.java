@@ -124,7 +124,7 @@ public class MovesFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recyclerViewMoves);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        adapter = new MoveAdapter(moveViewModel.getMoveList().getValue(), move -> {
+        adapter = new MoveAdapter(moveViewModel.getMoveList().getValue(), moveViewModel, move -> {
             moveViewModel.selectMove(move);
             navController.navigate(R.id.action_movesFragment_to_moveDetailFragment);
         });
